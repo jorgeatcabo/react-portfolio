@@ -1,0 +1,12 @@
+/*footer*/
+.container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content:space-around;
+	align-items:center;
+  }
+
+  .social-links{
+	  width: 200px;
+  }
