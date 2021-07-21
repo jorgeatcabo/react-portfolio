@@ -1,17 +1,21 @@
 import React from 'react'
-import { Nav } from "react-bootstrap"
+import { Nav, Navbar } from "react-bootstrap"
 
-function Navigation() {
+function Navigation({ currentPage, handlePageChange }) {
     return (
         <div>
-             <Nav className="mr-auto">
-      <Nav.Link href="#pricing">Services & Rates</Nav.Link>
-      <Nav.Link href="#pricing">Vehicles & Features</Nav.Link>
-      <Nav.Link href="#pricing">Testimonials</Nav.Link>
-      <Nav.Link href="#pricing">Locations</Nav.Link>
-      <Nav.Link href="#pricing">Contact Us</Nav.Link>
-      <Nav.Link href="#pricing">Instructions</Nav.Link>
-    </Nav>
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar.Brand href="/">Jorge Soto</Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="mr-auto">
+                <Nav.Link onClick={() => handlePageChange('About')}>About Me</Nav.Link>
+                <Nav.Link onClick={() => handlePageChange('Portfolio')}>Portfolio</Nav.Link>
+                <Nav.Link onClick={() => handlePageChange('Contact')}>Contact</Nav.Link>
+                <Nav.Link>Resume</Nav.Link>
+                </Nav>
+        </Navbar.Collapse>
+</Navbar>    
         </div>
     )
 }
