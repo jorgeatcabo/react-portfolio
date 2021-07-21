@@ -3,10 +3,10 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	justify-content:space-around;
-	align-items:center;
+	justify-content:center;
   }
 
   .social-links{
 	  width: 200px;
+	  padding: 10px;
   }
