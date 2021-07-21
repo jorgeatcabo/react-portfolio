@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Home from './pages/Home';
-import About from './pages/AboutMe';
 import Contact from './pages/Contact';
 import Portfolio from './pages/Portfolio'
 import Navigation from './Navigation'
@@ -11,11 +9,8 @@ export default function Header() {
 
   // TODO: Add a comment describing the functionality of this method
   const renderPage = () => {
-    if (currentPage === 'Home') {
-      return <Home />;
-    }
-    if (currentPage === 'About') {
-      return <About />;
+    if (currentPage === 'AboutMe') {
+      return <AboutMe />;
     }
     if (currentPage === 'Contact') {
       return <Contact />;

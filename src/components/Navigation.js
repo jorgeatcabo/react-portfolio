@@ -9,7 +9,7 @@ function Navigation({ currentPage, handlePageChange }) {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                <Nav.Link onClick={() => handlePageChange('About')}>About Me</Nav.Link>
+                <Nav.Link onClick={() => handlePageChange('AboutMe')}>About Me</Nav.Link>
                 <Nav.Link onClick={() => handlePageChange('Portfolio')}>Portfolio</Nav.Link>
                 <Nav.Link onClick={() => handlePageChange('Contact')}>Contact</Nav.Link>
                 <Nav.Link>Resume</Nav.Link>
