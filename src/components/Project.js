@@ -1,20 +1,35 @@
 import React from 'react'
+import "../style.css"
+import { Image, Col,Row,Card, Container } from "react-bootstrap"
+
 
 function Project({user}) {
+    const cardStyle = {
+        width: '18rem',
+      };
     return (
-        <div className="container">
-
-          <div className="card">
-        <img
-          className="card-img-top"
+      <>
+      <Row>
+      <Col>
+     <Card border="dark">
+        <Card.Header>{`${user.title}`}</Card.Header>
+        <Card.Body>
+          <Card.Title></Card.Title>
+          <Card.Text>
+          <img
           src={`${user.image}`}
           alt="Card cap"
+          style={cardStyle}
         />
-        <div className="card-body">
-          <h5 className="card-title">{`${user.title}`}</h5>
-        </div>
-      </div>
-    </div>
+          </Card.Text>
+        </Card.Body>
+      </Card>
+      </Col> 
+      </Row>
+     
+        
+        </>
+        
     )
 }
 

@@ -57,3 +57,52 @@
 	width: 100vw;
   }
   
+  .cardStyle {
+    width: '18rem';
+  }
+
+  main {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content:space-around;
+	/* display: flex;
+	flex-wrap: wrap;
+	margin-top: 2%; */
+  }
+  
+  /* .main-header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 60px;
+	background: #13293d;
+	color: #fff;
+  } */
+  
+  .card {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content:center;
+	position:absolute;
+	bottom:0px;
+	padding: 10px;
+	/* flex: 1 0 0;
+	padding: 10px;
+	text-align: center;
+	border-style: solid;
+	border-width: 1px; */
+  }
+  
+  .card header {
+	padding: 20px;
+	background: #13293d;
+	color: #fff;
+  }
+  
+  .card img {
+	width: 100%;
+	min-width: 400px;
+  }
+  
