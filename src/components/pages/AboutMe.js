@@ -1,26 +1,58 @@
 import React from 'react';
-import { Image, Col,Row } from "react-bootstrap"
+import { Image, Col,Row,Card, Container } from "react-bootstrap"
 
 export default function AboutMe() {
   return (
-       <>
+    <div>
 
-<h2 id="about-me">About Jorge Soto</h2>
-<Row>
+{/* <Container fluid>
+<Row className="justify-content-md-center">
     <Col xs={6} md={4}>
-      <Image className="photo" src="/assets/images/foto.jpg" width="200" height="200" roundedCircle  />
+      <Image src="/assets/images/foto.jpg" width="200" height="200" roundedCircle  />
     </Col>
   </Row>
+  <br/>
 
-  <p> 
-    Hi!, let me introduce myself, It is a pleasure to show you who I am. The goal of this personal website is to tell the world that through tecnology I can help someone in any part of the world to build a web application project that can help them to achieve their goals to improve their lives personally or in their business managing.
-  </p>
-  <p>
-    Please do not hesitate to reach me, I am already imaging, enjoying and developing that project that you have in mind.
-    Below are the ways you can do it.
-  </p>
+  <Row>
+  <Col xs={6} md={4}>
+ <Card border="dark" style={{ width: '18rem' }}>
+    <Card.Header></Card.Header>
+    <Card.Body>
+      <Card.Title>About Jorge Soto</Card.Title>
+      <Card.Text>
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </Card.Text>
+    </Card.Body>
+  </Card>
+  </Col> 
+  </Row>
+  </Container> */}
+<Container fluid>
+<Row className="justify-content-md-center">
+    <Col xs={6} md={4}>
+      <Image src="/assets/images/foto.jpg" width="200" height="200" roundedCircle  />
+    </Col>
+  </Row>
+  <br/>
 
-</>
+  <Row>
+  <Col>
+ <Card border="dark">
+    <Card.Header></Card.Header>
+    <Card.Body>
+      <Card.Title>About Jorge Soto</Card.Title>
+      <Card.Text>
+      Hi!, let me introduce myself, It is a pleasure to show you who I am. The goal of this personal website is to tell the world that through tecnology I can help someone in any part of the world to build a web application project that can help them to achieve their goals to improve their lives personally or in their business managing.
+                Please do not hesitate to reach me, I am already imaging, enjoying and developing that project that you have in mind.
+      </Card.Text>
+    </Card.Body>
+  </Card>
+  </Col> 
+  </Row>
+</Container>
+
+  </div>
 
       
   );
