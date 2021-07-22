@@ -1,6 +1,5 @@
 import React from 'react';
 import { Image, Col,Row,Card, Container } from "react-bootstrap"
-import Footer from '../Footer';
 
 export default function AboutMe() {
   return (
