@@ -4,9 +4,20 @@
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content:center;
+	position:absolute;
+	bottom:0px;
+	padding: 10px;
   }
 
   .social-links{
 	  width: 200px;
 	  padding: 10px;
   }
+
+  .mystyle {
+    background-color: blue;
+    position:absolute;
+    padding: 10px;
+    bottom:0px;
+	width:100%;
+  };

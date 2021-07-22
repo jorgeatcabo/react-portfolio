@@ -3,6 +3,7 @@ import Contact from './pages/Contact';
 import Portfolio from './pages/Portfolio'
 import Navigation from './Navigation'
 import AboutMe from './pages/AboutMe';
+import { Container,Row, Col } from "react-bootstrap";
 
 export default function Header() {
   const [currentPage, setCurrentPage] = useState('Home');
@@ -24,9 +25,14 @@ export default function Header() {
   const handlePageChange = (page) => setCurrentPage(page);
 
   return (
-    <div>
-      <Navigation currentPage={currentPage} handlePageChange={handlePageChange}/>
+    <Container fluid>
+      <Row>  
+      <Col>
+        <Navigation currentPage={currentPage} handlePageChange={handlePageChange}/>
+        </Col>
+      </Row>
+    
       {renderPage()}
-    </div>
+    </Container>
   );
 }
