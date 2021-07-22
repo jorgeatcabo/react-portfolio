@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <>
 
-    <footer>
+    <footer >
 
           <a class="social-links" href="https://www.linkedin.com/in/jorge-soto-at-cabo/" target="_blank" rel="noreferrer"><i class="fab fa-linkedin fa-2x"></i></a>
 

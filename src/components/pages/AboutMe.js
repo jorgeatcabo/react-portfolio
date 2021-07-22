@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image, Col,Row,Card, Container } from "react-bootstrap"
+import Footer from '../Footer';
 
 export default function AboutMe() {
   return (
@@ -20,7 +21,7 @@ export default function AboutMe() {
  <Card border="dark">
     <Card.Header></Card.Header>
     <Card.Body>
-      <Card.Title>About Jorge Soto</Card.Title>
+      <Card.Title>About Me</Card.Title>
       <Card.Text>
       Hi!, let me introduce myself, It is a pleasure to show you who I am. The goal of this personal website is to tell the world that through tecnology I can help someone in any part of the world to build a web application project that can help them to achieve their goals to improve their lives personally or in their business managing.
                 Please do not hesitate to reach me, I am already imaging, enjoying and developing that project that you have in mind.
@@ -29,7 +30,10 @@ export default function AboutMe() {
   </Card>
   </Col> 
   </Row>
+ 
 </Container>
+
+
 
   </div>
 
