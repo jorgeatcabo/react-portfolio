@@ -1,35 +1,28 @@
 import React from 'react'
 import "../style.css"
-import { Image, Col,Row,Card, Container } from "react-bootstrap"
+import { Col,Row,Card } from "react-bootstrap"
 
 
-function Project({user}) {
+function Project({project}) {
     const cardStyle = {
         width: '18rem',
       };
+
     return (
       <>
-      <Row>
+      <Row className="card-row">
       <Col>
      <Card border="dark">
-        <Card.Header>{`${user.title}`}</Card.Header>
+        <Card.Header>{`${project.title}`}</Card.Header>
         <Card.Body>
-          <Card.Title></Card.Title>
           <Card.Text>
-          <img
-          src={`${user.image}`}
-          alt="Card cap"
-          style={cardStyle}
-        />
+          <img src={`${project.image}`} alt={`${project.title}`} style={cardStyle} />
           </Card.Text>
         </Card.Body>
       </Card>
       </Col> 
       </Row>
-     
-        
         </>
-        
     )
 }
 
