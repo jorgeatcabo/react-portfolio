@@ -9,4 +9,22 @@ export function checkPassword(input) {
     return true;
   }
   return false;
+  
+}
+
+export function validateMessage(input) {
+  const message = /^.{1,50}$/;
+  if (input.match(message)) {
+    return true;
+  }
+  return false;
+}
+
+
+export function validateName(input) {
+  const name = /^[a-zA-Z]+$/;
+  if (input.match(name)) {
+    return true;
+  }
+  return false;
 }

@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { Col,Row,Form,Button,Modal} from "react-bootstrap"
-// Here we import a helper function that will check if the email is valid
-import { validateEmail } from '../../utils/helpers';
+import { validateEmail,validateName,validateMessage } from '../../utils/helpers';
+
 function Contact() {
- // Create state variables for the fields in the form
-  // We are also setting their initial values to an empty string
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
+  const [message, setMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [errorEmailMessage, setEmailErrorMessage] = useState('');
+  const [errorNameMessage, setNameErrorMessage] = useState('');
+  const [errorMessageMessage, setMessageErrorMessage] = useState('');
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -24,6 +26,9 @@ function Contact() {
       setEmail(inputValue);
     } else if (inputType === 'name') {
       setName(inputValue);
+    } 
+    else if (inputType === 'message') {
+      setMessage(inputValue);
     } 
   };
 
@@ -48,6 +53,35 @@ function Contact() {
     // If everything goes according to plan, we want to clear out the input after a successful registration.
     setName('');
     setEmail('');
+    setErrorMessage('')
+  };
+
+  const handleEmailMouseLeave = (e) => {
+
+    if (!validateEmail(email)) {
+      setEmailErrorMessage('Email is invalid');
+      return;
+    }
+    
+    setEmailErrorMessage('')
+  };
+
+  const handleNameMouseLeave = (e) => {
+
+    if (!validateName(name)) {
+      setNameErrorMessage('Name is invalid');
+      return;
+    }
+    setNameErrorMessage('')
+  };
+
+  const handleMessageMouseLeave = (e) => {
+
+    if (!validateMessage(message)) {
+      setMessageErrorMessage('Message is invalid');
+      return;
+    }
+    setMessageErrorMessage('')
   };
 
   return (
@@ -75,19 +109,22 @@ function Contact() {
   <Row className="mb-3">
     <Form.Group as={Col} controlId="formGridEmail">
       <Form.Label>Email</Form.Label>
-      <Form.Control value={email} type="email" name="email" onChange={handleInputChange} placeholder="Enter email" required  />
+      <Form.Control value={email} type="email" name="email" onChange={handleInputChange} onBlur={handleEmailMouseLeave}
+       placeholder="Enter Email" required  />
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridName">
       <Form.Label>Name</Form.Label>
-      <Form.Control value={name} type="text" name="name" onChange={handleInputChange} placeholder="Enter Name" required />
+      <Form.Control value={name} type="text" name="name" onChange={handleInputChange} onBlur={handleNameMouseLeave} 
+      placeholder="Enter Name" required />
     </Form.Group>
   </Row>
 
   <Row className="mb-3">
   <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
     <Form.Label>Message</Form.Label>
-    <Form.Control as="textarea" rows={3} required/>
+    <Form.Control as="textarea" rows={3} name="message" onChange={handleInputChange}  onBlur={handleMessageMouseLeave} 
+    placeholder="Enter Message"  required/>
   </Form.Group>
 
   </Row>
@@ -97,16 +134,28 @@ function Contact() {
     Submit
   </Button>
 </Form>
-      {errorMessage && (
+      {errorEmailMessage && (
         <div>
-          <p className="error-text">{errorMessage}</p>
+          <p className="error-text">{errorEmailMessage}</p>
+        </div>
+      )}
+
+      {errorNameMessage && (
+        <div>
+          <p className="error-text">{errorNameMessage}</p>
+        </div>
+      )}
+
+      {errorMessageMessage && (
+        <div>
+          <p className="error-text">{errorMessageMessage}</p>
         </div>
       )}
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
         </Modal.Header>
-        <Modal.Body>I wil touch with you very soon!</Modal.Body>
+        <Modal.Body>I will be in touch with you very soon!</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
