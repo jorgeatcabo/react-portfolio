@@ -1,52 +1,59 @@
 import React, { useState } from 'react';
+import { Col,Row,Form,Button,Modal} from "react-bootstrap"
 // Here we import a helper function that will check if the email is valid
-import { checkPassword, validateEmail } from '../../utils/helpers';
+import { validateEmail } from '../../utils/helpers';
 function Contact() {
  // Create state variables for the fields in the form
   // We are also setting their initial values to an empty string
   const [email, setEmail] = useState('');
-  const [userName, setUserName] = useState('');
-  // TODO: Create a password variable and a function "setPassword" using useState
-  const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const handleInputChange = (e) => {
     // Getting the value and name of the input which triggered the change
-    let target = e.target;
-    let inputType = target.name;
-    let inputValue = target.value;
+    const { target } = e;
+    const inputType = target.name;
+    const inputValue = target.value;
 
     // Based on the input type, we set the state of either email, username, and password
-    // TODO: Add an else statement to the end that will set the password to the value of 'inputValue'
     if (inputType === 'email') {
       setEmail(inputValue);
-    } else if (inputType === 'userName') {
-      setUserName(inputValue);
-    }
+    } else if (inputType === 'name') {
+      setName(inputValue);
+    } 
   };
 
+  function submitHandler(event) {
+    event.preventDefault();
+    handleShow()
+  }
   const handleFormSubmit = (e) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
-    if (!validateEmail(email) || !userName) {
-      setErrorMessage('Fill out email and username please!');
-    } else if (!checkPassword(password)) {
-      setErrorMessage(
-        `Choose a more secure password for the account: ${userName}`
-      );
-    } else {
-      alert(`Hello ${userName}`);
-    }
 
-    setUserName('');
-    // TODO: Set the password back to an empty string after the user clicks submit
+    // First we check to see if the email is not valid or if the userName is empty. If so we set an error message to be displayed on the page.
+    if (!validateEmail(email) || !name) {
+      setErrorMessage('Email or username is invalid');
+      // We want to exit out of this code block if something is wrong so that the user can correct it
+      return;
+      // Then we check to see if the password is not valid. If so, we set an error message regarding the password.
+    }
+   
+    alert(`Hello ${name}`);
+
+    // If everything goes according to plan, we want to clear out the input after a successful registration.
+    setName('');
     setEmail('');
   };
 
   return (
     <div>
-      <p>Hello {userName}</p>
-      <form className="form">
+      <h1>Contact</h1>
+      {/* <form className="form">
         <input
           value={email}
           name="email"
@@ -55,22 +62,60 @@ function Contact() {
           placeholder="email"
         />
         <input
-          value={userName}
+          value={name}
           name="userName"
           onChange={handleInputChange}
           type="text"
           placeholder="username"
         />
-        {/* TODO Add another input field with a value, name, type, and placeholder of "password" */}
-        {/* TODO Add a `onChange` attribute with a value of `handleInputChange` */}
-        <button onClick={handleFormSubmit}>Submit</button>
-      </form>
+         
+        <button type="button" onClick={handleFormSubmit}>Submit</button>
+      </form> */}
+      <Form  onSubmit={submitHandler}>
+  <Row className="mb-3">
+    <Form.Group as={Col} controlId="formGridEmail">
+      <Form.Label>Email</Form.Label>
+      <Form.Control value={email} type="email" name="email" onChange={handleInputChange} placeholder="Enter email" required  />
+    </Form.Group>
+
+    <Form.Group as={Col} controlId="formGridName">
+      <Form.Label>Name</Form.Label>
+      <Form.Control value={name} type="text" name="name" onChange={handleInputChange} placeholder="Enter Name" required />
+    </Form.Group>
+  </Row>
+
+  <Row className="mb-3">
+  <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+    <Form.Label>Message</Form.Label>
+    <Form.Control as="textarea" rows={3} required/>
+  </Form.Group>
+
+  </Row>
+
+
+  <Button variant="primary"  type="submit">
+    Submit
+  </Button>
+</Form>
       {errorMessage && (
         <div>
           <p className="error-text">{errorMessage}</p>
         </div>
       )}
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+        </Modal.Header>
+        <Modal.Body>I wil touch with you very soon!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
+
+  
 }
 export default Contact;
