@@ -16,7 +16,7 @@ function Project({project}) {
         <Card.Header>{`${project.title}`}</Card.Header>
         <Card.Body>
           <Card.Text>
-          <img src={`${project.image}`} alt={`${project.title}`} style={cardStyle} />
+            <a href={`${project.link}`} target="_blank" rel="noreferrer"><img src={`${project.image}`} alt={`${project.title}`} style={cardStyle} /></a>
           </Card.Text>
         </Card.Body>
       </Card>
