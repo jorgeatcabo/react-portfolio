@@ -19,12 +19,18 @@ const projects = [
   },
   {   
     id:'4',
+    title: 'Vagabundos App',
+    image: '/assets/images/VagabundosApp.gif',
+    link:'https://jorgeatcabo.github.io/vagabundos-application/',
+  },
+  {   
+    id:'5',
     title: 'Password Generator App',
     image: '/assets/images/password-generator-image.png',
     link:'https://jorgeatcabo.github.io/password-generator/',
   },
   {   
-    id:'5',
+    id:'6',
     title: 'Work Day Scheduler App',
     image: '/assets/images/work-day-scheduler.png',
     link:'https://jorgeatcabo.github.io/work-day-scheduler/',
