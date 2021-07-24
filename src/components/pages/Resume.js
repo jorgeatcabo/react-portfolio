@@ -17,7 +17,7 @@ export default function AboutMe() {
       Resume
       <br />
       <br />
-      Download My Resume
+     <a href='https://jorge-portfolio.s3.amazonaws.com/Jorge+Soto+Web+Development+_+Full+Stack+Resume+Updated+(1).pdf' target="_blank" rel="noreferrer">Download My Resume</a>
     </Card.Title>
     <Card border="dark">
     <Card.Header></Card.Header>
