@@ -3,6 +3,7 @@ import Portfolio from './pages/Portfolio'
 import Navigation from './Navigation'
 import AboutMe from './pages/AboutMe';
 import Contact from "./pages/Contact";
+import Resume from "./pages/Resume";
 import { Container,Row, Col } from "react-bootstrap";
 import "../style.css"
 import projects from '../projects';
@@ -10,7 +11,6 @@ import projects from '../projects';
 export default function Header() {
   const [currentPage, setCurrentPage] = useState('Home');
 
-  // TODO: Add a comment describing the functionality of this method
   const renderPage = () => {
     if (currentPage === 'AboutMe') {
       return <AboutMe />;
@@ -20,6 +20,9 @@ export default function Header() {
     }
     if (currentPage === 'Portfolio') {
       return <Portfolio projects={projects}  />;
+    }
+    if (currentPage === 'Resume') {
+      return <Resume  />;
     }
     return <AboutMe />;
   };

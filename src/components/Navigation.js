@@ -12,7 +12,7 @@ function Navigation({ currentPage, handlePageChange }) {
                 <Nav.Link onClick={() => handlePageChange('AboutMe')}>About Me</Nav.Link>
                 <Nav.Link onClick={() => handlePageChange('Portfolio')}>Portfolio</Nav.Link>
                 <Nav.Link onClick={() => handlePageChange('Contact')}>Contact</Nav.Link>
-                <Nav.Link>Resume</Nav.Link>
+                <Nav.Link onClick={() => handlePageChange('Resume')}>Resume</Nav.Link>
                 </Nav>
         </Navbar.Collapse>
 </Navbar>    
