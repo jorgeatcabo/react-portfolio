@@ -2,7 +2,6 @@ import React from 'react'
 import "../style.css"
 import { Col,Row,Card,OverlayTrigger,Tooltip } from "react-bootstrap"
 
-
 function Project({project}) {
     const cardStyle = {
         width: '18rem',
@@ -18,7 +17,6 @@ function Project({project}) {
 
     return (
       <>
-    
       <Row className="card-row">
       <Col>
      <Card border="dark">
