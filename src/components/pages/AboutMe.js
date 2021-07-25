@@ -1,16 +1,15 @@
 import React from 'react';
 import { Image, Col,Row,Card, Container } from "react-bootstrap"
-
+import foto from '../../assets/images/foto.jpg'
 export default function AboutMe() {
   return (
     <div>
        <br/>
 
-
 <Container fluid>
 <Row className="justify-content-md-center">
     <Col xs={6} md={4}>
-      <Image src="/assets/images/foto.jpg" width="200" height="200" roundedCircle  />
+      <Image src={foto} width="200" height="200" roundedCircle  />
     </Col>
   </Row>
   <br/>
