@@ -5,7 +5,7 @@ function Navigation({ currentPage, handlePageChange }) {
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Navbar.Brand href="/">Jorge Soto</Navbar.Brand>
+            <Navbar.Brand onClick={() => handlePageChange('AboutMe')}>Jorge Soto</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
