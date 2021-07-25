@@ -45,7 +45,7 @@ The footer shows text or icon links to the developer’s GitHub and LinkedIn pro
 It is necessary to know ReactJs, Bootstrap, CSS and Regex. You can contribute reporting bugs, suggesting enhacements, pull requests. Best practices for class/id naming conventions, indentation, quality comments, etc.
 
 # Test
-For local testing use: "git clone git@github.com:jorgeatcabo/react-portfolio.git", “npm install” and "npm start". For testing on a deployment URL use:
+For local testing use: "git clone git@github.com:jorgeatcabo/react-portfolio.git", “npm install” and "npm start". For testing on a deployment URL use: https://jorgeatcabo.github.io/react-portfolio/
 
 # Questions
 https://github.com/jorgeatcabo
