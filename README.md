@@ -56,3 +56,5 @@ san_lucas2005@yahoo.com
 MIT
 
 ----
+
+![App Working](./public/react-portfolio.gif)
